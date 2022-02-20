@@ -23,18 +23,31 @@ function App() {
 
   const numberToString = (string) => {
 
-    if( parseInt( string ) === 0 ) {
+    if(parseInt(string) === 0 ) {
       setResult("zero");
     }
 
-    //Array of numbers until 20
+    // Array of numbers until 20
     const numberUntil20 = ["one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
-    //Array of tens numbers
+    // Array of tens numbers
     const tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
 
     //Array of numbers bigger then tens
     const hundreds = ["thousand", "million", "billion", "trillion"];
+
+    // Split the string/number 3 digit pieces
+    let stringLength = string.length;
+    let stringIntoPieces = [];
+    let stringReverse = string.split("").reverse().join("");
+    console.log(stringReverse)
+    
+    for(let i = 0; i < stringLength; i=i+3){
+      let temp = stringReverse.substring(i,i+3);
+      stringIntoPieces.push(temp)
+    }
+
+    console.log(stringIntoPieces)
   }
   
   return (
