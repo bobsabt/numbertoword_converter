@@ -47,7 +47,14 @@ function App() {
       stringIntoPieces.push(temp)
     }
 
-    console.log(stringIntoPieces)
+    // Check: is there enough bigger numbers thens tens
+    let stringIntoPiecesLength = stringIntoPieces.length;
+    if(stringIntoPiecesLength > hundreds.length){
+      setResult("Sorry, it is too big number")
+    }
+
+    //console.log(stringIntoPieces)
+
   }
   
   return (
