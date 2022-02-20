@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 function App() {
+  const [numberAsString, setNumberAsString] = React.useState("");
+  const [numberIsValid, setNumberIsValid] = React.useState(true);
+  const [result, setResult] = React.useState();
+
+  const onClickConvert = () => {
+    console.log("hello")
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input type="text" placeholder='Write your number here...' value={numberAsString} onChange={e=>setNumberAsString(e.target.value)}/>
+      <button onClick={onClickConvert}>Convert</button>
+      {!numberIsValid && <p>Please use just number digit</p>}
+      <p>{result}</p>
+       
     </div>
   );
 }
