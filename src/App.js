@@ -15,7 +15,7 @@ function App() {
 
     if(stringArr){
       setNumberIsValid(true);
-      numberToString(string);
+      setResult(numberToString(string));
     }
     else{
       setNumberIsValid(false);
