@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/numbertoword_converter/static/css/main.0492c435.css",
+    "main.js": "/numbertoword_converter/static/js/main.ec1d7e24.js",
+    "static/js/787.40e6ec19.chunk.js": "/numbertoword_converter/static/js/787.40e6ec19.chunk.js",
+    "index.html": "/numbertoword_converter/index.html",
+    "main.0492c435.css.map": "/numbertoword_converter/static/css/main.0492c435.css.map",
+    "main.ec1d7e24.js.map": "/numbertoword_converter/static/js/main.ec1d7e24.js.map",
+    "787.40e6ec19.chunk.js.map": "/numbertoword_converter/static/js/787.40e6ec19.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0492c435.css",
+    "static/js/main.ec1d7e24.js"
+  ]
+}
