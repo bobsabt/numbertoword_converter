@@ -1,4 +1,4 @@
-const numberToString = require("./numberToString")
+const numberToString = require("./numberToString");
 
 test("seven", () => {
     const resultNumberToString = numberToString("7");
