@@ -17,3 +17,87 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  background-color: #D3D3D3;
+}
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 0 10px gray;
+  border-radius: 20px;
+  margin: 10px;
+}
+.container h1{
+  margin: 30px;
+}
+
+.input-box{
+  max-width: 400px;
+  width: 100%;
+  margin: 10px;
+}
+
+.input-box p{
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.container input{
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  background-color: #fbfafa;
+  
+}
+
+.container button{
+  width: 80px;
+  font-weight: bold;
+  border: none;
+  border-radius: 3px;
+  background-color: #222;
+  color:#D3D3D3;
+  padding: 10px;
+  margin: 30px;
+}
+
+.message-box{
+  max-width: 400px;
+  width: 100%;
+}
+
+.message-box p{
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+
+.message-box div{
+  border: 2px solid green;
+  background-color: #fbfafa;
+  border-radius: 5px;
+  border: none;
+  height: 300px;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 540px){
+  .container, .input-box, .message-box{
+    width: 90%;
+  }
+}
