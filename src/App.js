@@ -7,7 +7,6 @@ function App() {
   const [result, setResult] = React.useState();
   const numberToString = require("./numberToString");
 
-
   //Validation of the user input
   const onClickConvert = (string) => {
 
