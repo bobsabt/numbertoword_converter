@@ -3,12 +3,12 @@ This tool converts numeric input into the English phrase of that number.
 
 For example:
 
-7       === seven
-42      === forty-two
-1999    === one thousand nine hundred and ninety-nine
-2001    === two thousand and one
-17999   === seventeen thousand nine hundred and ninety-nine
-342251  === three hundred and forty-two thousand two hundred and fifty-one
+7       === seven <br/>
+42      === forty-two <br/>
+1999    === one thousand nine hundred and ninety-nine <br/>
+2001    === two thousand and one <br/>
+17999   === seventeen thousand nine hundred and ninety-nine <br/>
+342251  === three hundred and forty-two thousand two hundred and fifty-one <br/>
 1300420 === one million three hundred thousand four hundred and twenty
 
 ### Getting Started with Create React App
