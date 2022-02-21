@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+
 
 function App() {
   const [numberAsString, setNumberAsString] = React.useState("");
@@ -15,31 +15,26 @@ function App() {
   //Array of numbers bigger then tens
   const hundreds = [" ", "thousand", "million"];
 
-
-
+  //
   const onClickConvert = (string) => {
-    if(!string.includes(".")){
-      //console.log("true");
+
+    let stringArr = [...string].every(char =>"0123456789".includes(char))
+
+    if(stringArr){
       setNumberIsValid(true);
-      numberToString(string)
-
-
+      numberToString(string);
     }
     else{
-      //console.log("false");
       setNumberIsValid(false);
-    }
-    
-  }
+    } 
+  };
 
   const numberToString = (input) => {
-    let word;
 
+    //Handle zero
     if(parseInt(input) === 0 ) {
       return setResult("zero");
     }
-
-    
 
     // Split the string/number 3 digit pieces
     let stringIntoGroup = [];
@@ -47,18 +42,19 @@ function App() {
 
     let numGroups = parseInt(stringLength/3);
     
+    //Handle the too big number
     if(numGroups > hundreds.length){
-      return setResult("Too long number")
+      return setResult("Too long number");
     }
 
     let remainder = stringLength % 3;
-    console.log(remainder)
 
     if(remainder > 0){
-      stringIntoGroup.push(input.substring(0, remainder))
+      stringIntoGroup.push(input.substring(0, remainder));
     }
+
     for(let i = 0; i < numGroups; i++){
-      stringIntoGroup.push(input.substring(i*3+remainder, (i+1)*3+remainder))
+      stringIntoGroup.push(input.substring(i*3+remainder, (i+1)*3+remainder));
     }
 
     if(remainder > 0){
@@ -71,26 +67,19 @@ function App() {
       let temp = getWords(stringIntoGroup[i]);
       
       tempResult += temp;
-      //console.log(numGroups)
 
       if(numGroups > 1 && temp.trim() !== ""){
         tempResult += " " + hundreds[numGroups-i-1] + " ";
-        console.log(tempResult)
       }
-      
-
-
-
     }
-    //console.log(stringIntoGroup)
     return setResult(tempResult);
-
-  }
+  };
 
   const getWords = (piece) => {
     let digits = piece.split("");
     let words = "";
     
+    //Handle the pieces of the group based on their length
     if(digits.length === 3){
       words = numberUntil20[parseInt(digits[0])];
 
@@ -111,7 +100,6 @@ function App() {
         }
       } 
     }
-
     else if(digits.length === 2){
       if(parseInt(digits[0]) < 2) {
         words = numberUntil20[parseInt(digits[0])*10 + parseInt(digits[1])];
@@ -125,7 +113,6 @@ function App() {
     }
     else{
       words = numberUntil20[parseInt(digits[0])];
-      
     }
     return words;
   }
@@ -133,11 +120,9 @@ function App() {
   
   return (
     <div className="App">
-      <input type="number" placeholder='Write your number here...' value={numberAsString} onChange={e=>setNumberAsString(e.target.value)}/>
+      <input type="text" placeholder='Write your number here...' value={numberAsString} onChange={e=>setNumberAsString(e.target.value)}/>
       <button onClick={()=>onClickConvert(numberAsString)}>Convert</button>
-      {!numberIsValid && <p>Please write a whole number</p>}
-      <p>{result}</p>
-       
+      {!numberIsValid ? <p>Please write whole numbers only</p> : <p>{result}</p>}
     </div>
   );
 }
