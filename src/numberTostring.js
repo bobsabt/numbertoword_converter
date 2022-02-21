@@ -5,7 +5,7 @@ const numberUntil20 = ["", "one", "two", "three", "four", "five", "six", "seven"
 const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
 
 //Array of numbers bigger then tens
-const hundreds = ["", "thousand", "million"];
+const hundreds = ["", "thousand", "million", "billion"];
 
 function numberToString(input){
     let tempResult = "";
@@ -22,7 +22,7 @@ function numberToString(input){
     let numGroups = parseInt(stringLength/3);
     
     //Handle the too big number
-    if(numGroups > hundreds.length){
+    if(input.length > 12){
       return tempResult = "Too long number";
     }
 
@@ -43,13 +43,9 @@ function numberToString(input){
     for(let i = 0; i < numGroups; i++){
         let temp = getWords(stringIntoGroup[i]);
       
-        if(numGroups > 3 && i === 0){
-          temp += " " + hundreds[1] + " ";
-        }
-        
         tempResult += temp;
         
-        if(numGroups > 1 && temp.trim() !== "" && !(numGroups > 3 && i === 0)){
+        if(numGroups > 1 && temp.trim() !== "" ){
             tempResult += " " + hundreds[numGroups-i-1] + " ";
         }
     }

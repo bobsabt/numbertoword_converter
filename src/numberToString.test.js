@@ -65,7 +65,11 @@ test("eighty", () => {
     expect(resultNumberToString).toBe("eighty")
 });
 
-test("twelve thousand three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two", () => {
+test("one billion", () => {
+    const resultNumberToString = numberToString("1000000000");
+    expect(resultNumberToString).toBe("one billion")
+});
+test("twelve billion three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two", () => {
     const resultNumberToString = numberToString("12345678902");
-    expect(resultNumberToString).toBe("twelve thousand three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two")
+    expect(resultNumberToString).toBe("twelve billion three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two")
 });
