@@ -1,5 +1,6 @@
 // Array of numbers until 20
-const numberUntil20 = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
+const numberUntil20 = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
+"eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 
 // Array of tens numbers
 const tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety" ];
