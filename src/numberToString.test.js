@@ -64,3 +64,8 @@ test("eighty", () => {
     const resultNumberToString = numberToString("80");
     expect(resultNumberToString).toBe("eighty")
 });
+
+test("twelve thousand three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two", () => {
+    const resultNumberToString = numberToString("12345678902");
+    expect(resultNumberToString).toBe("twelve thousand three hundred and forty-five million six hundred and seventy-eight thousand nine hundred and two")
+});

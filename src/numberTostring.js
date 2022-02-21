@@ -41,13 +41,17 @@ function numberToString(input){
     }
 
     for(let i = 0; i < numGroups; i++){
-      let temp = getWords(stringIntoGroup[i]);
+        let temp = getWords(stringIntoGroup[i]);
       
-      tempResult += temp;
-
-      if(numGroups > 1 && temp.trim() !== ""){
-        tempResult += " " + hundreds[numGroups-i-1] + " ";
-      }
+        if(numGroups > 3 && i === 0){
+          temp += " " + hundreds[1] + " ";
+        }
+        
+        tempResult += temp;
+        
+        if(numGroups > 1 && temp.trim() !== "" && !(numGroups > 3 && i === 0)){
+            tempResult += " " + hundreds[numGroups-i-1] + " ";
+        }
     }
 
     if(tempResult.includes("  ")){
