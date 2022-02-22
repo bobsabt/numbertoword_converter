@@ -7,6 +7,13 @@ function App() {
   const [result, setResult] = React.useState();
   const numberToString = require("./numberToString");
 
+  // Change tab title
+  React.useEffect(() => {
+    document.title="NumberConverter"
+  }, 
+  []
+  );
+
   //Validation of the user input
   const onClickConvert = (string) => {
 
